@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrlCut App Features</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #7c3aed;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .card {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(124,58,237,0.15);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%237c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            .container {
+                background: #1e1e1e;
+                box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            }
+            h1, h2, h3 {
+                color: #e0e0e0;
+                border-bottom-color: #a78bfa;
+            }
+            .card {
+                background: #2c2c2c;
+                border-color: #333;
+            }
+            li {
+                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+            }
+            code {
+                background-color: #333;
+            }
+            .footer {
+                color: #aaa;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UrlCut Application</h1>
+        <p><strong>UrlCut</strong> is a URL utility application designed to automatically extract and clean tracking parameters and marketing tokens from shared URLs, persisting them in a local lightweight database for organized management and one-click sharing.</p>
+
+        <h2>Key Features</h2>
+
+        <div class="card">
+            <h3>✨ URL Cleaner Utility</h3>
+            <ul>
+                <li><strong>Tracking Parameters Removal:</strong> Automatically scans and removes bloated query parameters like <code>utm_source</code>, <code>fbclid</code>, <code>gclid</code>, <code>NaPm</code>, etc.</li>
+                <li><strong>Preservation of Critical Identifiers:</strong> Retains necessary store item IDs, article IDs, and structural variables required for successful web page loading.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📥 Share Intent Detection</h3>
+            <ul>
+                <li><strong>Seamless Integration:</strong> Simply click the native share sheet in browsers, shopping portals, or video apps, and choose UrlCut to parse and clean your URL instantly.</li>
+                <li><strong>Background Support:</strong> Supports receiving and resolving share intents in both foreground and background application states.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>💾 Hive Local Storage and Organization</h3>
+            <ul>
+                <li><strong>Lightweight Local Database:</strong> Utilizes Hive for high-speed local storage, ensuring your links stay saved only on your device.</li>
+                <li><strong>Title Customization:</strong> Enables editing saved URL metadata with intuitive, single-line titles to keep your collection legible.</li>
+                <li><strong>Folder Grouping:</strong> Organizes links into user-defined folders (e.g., Shopping, Work, Reading list) to simplify retrieval.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🔗 Quick Actions</h3>
+            <ul>
+                <li><strong>One-Click Sharing:</strong> Integrated with <code>share_plus</code> to launch the native sharing dialog to quickly send cleaned URLs via chat or mail apps.</li>
+                <li><strong>Clipboard Copying:</strong> Copy refined, clean URLs directly to the clipboard with one simple tap.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📱 Instagram Media Downloader</h3>
+            <ul>
+                <li><strong>Media Downloading:</strong> Conveniently fetches media from Instagram link items.</li>
+                <li><strong>Platform-specific Storage:</strong> Saves media directly to the Photos Album (PhotoKit) on iOS devices, and writes files directly to the Downloads folder on macOS environments.</li>
+            </ul>
+        </div>
+
+        <p class="footer">This document was written based on the source code of the UrlCut project.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrlCut 앱 기능 소개</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #7c3aed;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .card {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(124,58,237,0.15);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%237c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            .container {
+                background: #1e1e1e;
+                box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            }
+            h1, h2, h3 {
+                color: #e0e0e0;
+                border-bottom-color: #a78bfa;
+            }
+            .card {
+                background: #2c2c2c;
+                border-color: #333;
+            }
+            li {
+                background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+            }
+            code {
+                background-color: #333;
+            }
+            .footer {
+                color: #aaa;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UrlCut 앱 소개</h1>
+        <p><strong>UrlCut</strong>은 외부 앱으로부터 공유된 복잡한 URL에서 추적(Tracking) 파라미터 및 마케팅 정보를 정교하게 제거하고, 핵심 웹 주소만 정제하여 영속적으로 저장하고 편리하게 공유할 수 있는 URL 관리 애플리케이션입니다.</p>
+
+        <h2>주요 기능</h2>
+
+        <div class="card">
+            <h3>✨ URL 정제 유틸리티 (UrlCleaner)</h3>
+            <ul>
+                <li><strong>트래킹 파라미터 제거:</strong> URL 내부의 다양한 마케팅 및 추적용 파라미터(<code>utm_source</code>, <code>fbclid</code>, <code>gclid</code>, <code>NaPm</code> 등)를 자동으로 감지하여 정밀 제거합니다.</li>
+                <li><strong>핵심 식별 데이터 보존:</strong> 쇼핑몰의 상품 ID나 콘텐츠 고유 식별값 등 공유에 필요한 필수 파라미터는 안정적으로 보존합니다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📥 공유 인텐트 수신 (Share Intent Receiver)</h3>
+            <ul>
+                <li><strong>간편한 공유 연동:</strong> 웹 브라우저, 뉴스 앱, 쇼핑 앱 등 외부 앱에서 '공유하기'를 누르고 UrlCut을 선택하면 정제 프로세스가 자동으로 실행됩니다.</li>
+                <li><strong>백그라운드 처리:</strong> 포그라운드뿐만 아니라 백그라운드 상태에서도 공유된 URL을 정상적으로 정제하여 저장합니다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>💾 로컬 저장소 및 관리 (Hive DB)</h3>
+            <ul>
+                <li><strong>경량 데이터베이스 활용:</strong> 경량 NoSQL인 Hive를 사용하여 정제된 URL 목록을 매우 빠르고 안정적으로 로컬 기기에 저장합니다.</li>
+                <li><strong>한 줄 타이틀 편집:</strong> 사용자가 저장된 링크를 쉽게 알아볼 수 있도록 직관적인 한 줄 타이틀 편집 기능을 제공합니다.</li>
+                <li><strong>폴더별 분류:</strong> 관심 주제(예: 쇼핑, 뉴스, 읽을거리)에 따라 폴더를 구성하여 저장된 링크들을 효과적으로 분류 및 관리합니다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🔗 원클릭 공유 및 클립보드 복사</h3>
+            <ul>
+                <li><strong>네이티브 공유 기능:</strong> <code>share_plus</code> 연동을 통해 카카오톡, 메시지, 메일 등 다른 앱으로 정제된 URL을 즉시 전달합니다.</li>
+                <li><strong>클립보드 즉시 복사:</strong> 한 번의 터치로 정제된 깔끔한 링크를 클립보드에 복사할 수 있는 편리한 인터랙션을 지원합니다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📱 인스타그램 미디어 다운로드</h3>
+            <ul>
+                <li><strong>인스타그램 미디어 처리:</strong> 인스타그램 링크에서 관련 미디어를 손쉽게 가져옵니다.</li>
+                <li><strong>플랫폼별 맞춤형 저장:</strong> iOS 환경에서는 앨범(PhotoKit)에 직접 저장하고, macOS 환경에서는 다운로드 폴더로 안전하게 내려받습니다.</li>
+            </ul>
+        </div>
+
+        <p class="footer">이 문서는 UrlCut 프로젝트의 소스 코드를 기반으로 작성되었습니다.</p>
+    </div>
+</body>
+</html>
